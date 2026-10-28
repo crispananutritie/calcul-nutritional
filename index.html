@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cristina Pană | Calcul Nutrițional & Meniuri Colectivități</title>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --primary-light: #e8f5e9;
+            --text-dark: #263238;
+            --text-light: #ffffff;
+            --accent-color: #ff9100;
+            --bg-light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://unsplash.com') no-repeat center center/cover;
+            color: var(--text-light);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        header h2 {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 145, 0, 0.4);
+        }
+
+        .btn-cta:hover {
+            background-color: #e08100;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--bg-light);
+        }
+
+        .problem-section h3 {
+            font-size: 2rem;
+            color: #c62828;
+            margin-bottom: 20px;
+        }
+
+        .problem-section p {
+            max-width: 750px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px;
+            margin-bottom: 25px;
+            color: #455a64;
+        }
+
+        .about-content h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .about-content ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .about-content ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .about-content ul li::before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Services Section */
+        .services-section {
+            background-color: var(--primary-light);
+            padding: 80px 0;
+        }
+
+        .services-section h3 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--text-light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .service-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        /* Form Section */
+        .form-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid var(--primary-light);
+        }
+
+        .form-container h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cfd8dc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #1b5e20;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--text-light);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        footer .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        footer .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="container">
+            <h1>Meniuri Perfect Echilibrate. Siguranță Legală 100%.</h1>
+            <h2>Calcul nutrițional profesionist, rețetare și management al alergenilor pentru grădinițe, școli și firme de catering. Reduceți riscurile la controalele DSP și DSVSA.</h2>
+            <a href="#audit" class="btn-cta">Solicită un Audit Gratuit de 1 Săptămână</a>
+        </div>
+    </header>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h3>Lipsa calculului caloric este sancționată drastic!</h3>
+            <p>Conform Ordinului MS nr. 1563/2008, alimentația preșcolarilor și elevilor în colectivități trebuie monitorizată strict matematic. Gestionarea corectă a rețetelor, stabilirea gramajelor la produsul finit și cartografierea transparentă a alergenilor reprezintă obligații legale exigente. Eu preiau întreaga această responsabilitate de pe umerii dumneavoastră.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Cristina Pană</h3>
+                    <p style="font-weight: 600; color: #546e7a; margin-bottom: 15px;">Tehnician Nutriționist | Expert Alimentație Colectivă</p>
+                    <div class="quote">
+                        “Alimentația sănătoasă și educația, în acest sens, reprezintă bazele unei bune dezvoltări atât fizice, cât și psihice.”
+                    </div>
+                    <p>Cu o colaborare solidă în domeniul HoReCa și al alimentației publice începută în anul 2015, am conceput și auditat meniuri complexe pentru spitale de stat și private, restaurante, corporații, școli și grădinițe.</p>
+                </div>
+                <div class="about-content" style="background-color: var(--bg-light); padding: 30px; border-radius: 10px;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">Calificări și Acreditări:</h4>
+                    <ul>
+                        <li><strong>Tehnician Nutriționist</strong> – ABC Fitness School (Mai 2013)</li>
+                        <li><strong>Instructor Aerobic-Fitness</strong> (Noiembrie 2015)</li>
+                        <li><strong>Stanford Introduction to Food and Health</strong> (Coursera)</li>
+                        <li>Peste 10 ani de experiență directă în managementul rețetarelor de colectivitate</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h3>Servicii Profesionale de Consultanță</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>Calcul Rețetare</h4>
+                    <p>Determinarea valorilor calorice, macronutrienților (proteine, lipide, carbohidrați), micronutrienților și a costurilor per 100g de preparat finit.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Meniuri Ciclice Sănătoase</h4>
